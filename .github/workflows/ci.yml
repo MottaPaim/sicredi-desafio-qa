@@ -1,0 +1,50 @@
+# .github/workflows/ci.yml
+name: Java API CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Start mock-server
+        shell: bash
+        run: |
+          cd mock-server
+          npm ci
+          node server.js &
+          sleep 5
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Run Maven tests
+        run: mvn clean test
+
+      - name: Generate and upload Allure report
+        shell: bash
+        run: |
+          npm install -g allure-commandline --no-save
+          allure generate target/allure-results --clean -o target/allure-report
+        # em seguida publica como artefato
+      - name: Upload Allure report
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: target/allure-report
