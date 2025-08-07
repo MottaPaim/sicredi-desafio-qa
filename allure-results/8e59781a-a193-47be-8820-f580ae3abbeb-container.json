@@ -1,1 +1,0 @@
-{"uuid":"8e59781a-a193-47be-8820-f580ae3abbeb","name":"com.sicredi.qa.UsersTest","children":["7ea19d8e-2f0f-4ba9-956d-33092afdb3d1"],"befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1754373835468,"stop":1754373835468}],"afters":[],"start":1754373833121,"stop":1754373835505}
