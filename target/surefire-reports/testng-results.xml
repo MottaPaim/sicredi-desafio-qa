@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-08-06T17:59:36 BRT" name="Surefire suite" finished-at="2025-08-06T17:59:39 BRT" duration-ms="3109">
+    <groups>
+    </groups>
+    <test started-at="2025-08-06T17:59:36 BRT" name="Surefire test" finished-at="2025-08-06T17:59:39 BRT" duration-ms="3109">
+      <class name="com.sicredi.qa.UsersTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.sicredi.qa.UsersTest@44821a96]" started-at="2025-08-06T17:59:39 BRT" name="setup" finished-at="2025-08-06T17:59:39 BRT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="buscarUsuarios()[pri:0, instance:com.sicredi.qa.UsersTest@44821a96]" started-at="2025-08-06T17:59:39 BRT" name="buscarUsuarios" finished-at="2025-08-06T17:59:39 BRT" duration-ms="74" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- buscarUsuarios -->
+      </class> <!-- com.sicredi.qa.UsersTest -->
+      <class name="com.sicredi.qa.AddProductTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.sicredi.qa.AddProductTest@67080771]" started-at="2025-08-06T17:59:36 BRT" name="setup" finished-at="2025-08-06T17:59:39 BRT" duration-ms="2526" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="adicionarProdutoComErro()[pri:0, instance:com.sicredi.qa.AddProductTest@67080771]" started-at="2025-08-06T17:59:39 BRT" name="adicionarProdutoComErro" finished-at="2025-08-06T17:59:39 BRT" duration-ms="112" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adicionarProdutoComErro -->
+        <test-method signature="adicionarProdutoSucesso()[pri:0, instance:com.sicredi.qa.AddProductTest@67080771]" started-at="2025-08-06T17:59:39 BRT" name="adicionarProdutoSucesso" finished-at="2025-08-06T17:59:39 BRT" duration-ms="93" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adicionarProdutoSucesso -->
+        <test-method signature="listarProdutos()[pri:0, instance:com.sicredi.qa.AddProductTest@67080771]" started-at="2025-08-06T17:59:39 BRT" name="listarProdutos" finished-at="2025-08-06T17:59:39 BRT" duration-ms="34" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- listarProdutos -->
+      </class> <!-- com.sicredi.qa.AddProductTest -->
+      <class name="com.sicredi.qa.StatusTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.sicredi.qa.StatusTest@4944252c]" started-at="2025-08-06T17:59:39 BRT" name="setup" finished-at="2025-08-06T17:59:39 BRT" duration-ms="30" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verificarStatus()[pri:0, instance:com.sicredi.qa.StatusTest@4944252c]" started-at="2025-08-06T17:59:39 BRT" name="verificarStatus" finished-at="2025-08-06T17:59:39 BRT" duration-ms="49" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verificarStatus -->
+      </class> <!-- com.sicredi.qa.StatusTest -->
+      <class name="com.sicredi.qa.ProductsAuthTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.sicredi.qa.ProductsAuthTest@be35cd9]" started-at="2025-08-06T17:59:39 BRT" name="setup" finished-at="2025-08-06T17:59:39 BRT" duration-ms="28" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="listarProdutos()[pri:0, instance:com.sicredi.qa.ProductsAuthTest@be35cd9]" started-at="2025-08-06T17:59:39 BRT" name="listarProdutos" finished-at="2025-08-06T17:59:39 BRT" duration-ms="20" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- listarProdutos -->
+      </class> <!-- com.sicredi.qa.ProductsAuthTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>

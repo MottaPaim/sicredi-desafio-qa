@@ -1,0 +1,59 @@
+name: Java API CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1) Checkout do código
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2) Configura Java 17
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 17
+
+      # 3) Configura Node.js 16
+      - name: Set up Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      # 4) Instala dependências e levanta o mock-server customizado
+      - name: Start mock-server (custom server.js)
+        shell: bash
+        run: |
+          cd mock-server
+          npm ci
+          # Aqui chamamos diretamente seu server.js
+          node server.js &               
+          sleep 5                        
+          echo "==> Mock health check"
+          # Verifica se o login customizado responde 200
+          curl -i http://localhost:3000/auth/login \
+            -H "Content-Type: application/json" \
+            -d '{"username":"test","password":"test"}' || true
+
+      # 5) Executa os testes Maven
+      - name: Run Maven tests
+        run: mvn clean test
+
+      # 6) Gera o relatório Allure
+      - name: Generate Allure report
+        run: mvn allure:report
+
+      # 7) Publica o Allure como artefato
+      - name: Upload Allure report
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: target/site/allure-maven-plugin
